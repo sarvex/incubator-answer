@@ -5,6 +5,7 @@ import (
 	"fmt"
 	tagcommon "github.com/answerdev/answer/internal/service/tag_common"
 	"github.com/answerdev/answer/plugin"
+	"github.com/segmentfault/pacman/log"
 	"strconv"
 	"strings"
 	"time"
@@ -469,7 +470,13 @@ func (sr *searchRepo) parseResult(ctx context.Context, res []map[string][]byte) 
 	for _, r := range res {
 		questionIDs = append(questionIDs, string(r["question_id"]))
 		userIDs = append(userIDs, string(r["user_id"]))
-		tp, _ := time.ParseInLocation("2006-01-02 15:04:05", string(r["created_at"]), time.Local)
+		tp, pe := time.ParseInLocation("2006-01-02 15:04:05", string(r["created_at"]), time.Local)
+		if pe != nil {
+			tp, pe = time.ParseInLocation("2006-01-02T15:04:05Z", string(r["created_at"]), time.Local)
+			if pe != nil {
+				log.Error("parse time error: ", pe)
+			}
+		}
 		object := &schema.SearchObject{
 			ID:              string(r["id"]),
 			QuestionID:      string(r["question_id"]),
