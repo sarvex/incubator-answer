@@ -14,7 +14,7 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.14.0
-	github.com/go-sql-driver/mysql v1.6.0
+	github.com/go-sql-driver/mysql v1.8.0
 	github.com/goccy/go-json v0.10.2
 	github.com/golang/mock v1.6.0
 	github.com/google/uuid v1.3.0
@@ -42,6 +42,7 @@ require (
 	github.com/tidwall/gjson v1.14.4
 	github.com/yuin/goldmark v1.4.13
 	golang.org/x/crypto v0.13.0
+	golang.org/x/image v0.1.0
 	golang.org/x/net v0.15.0
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/yaml.v3 v3.0.1
@@ -51,6 +52,7 @@ require (
 )
 
 require (
+	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 // indirect
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/LinkinStars/go-i18n/v2 v2.2.2 // indirect
@@ -131,7 +133,6 @@ require (
 	go.uber.org/multierr v1.8.0 // indirect
 	go.uber.org/zap v1.23.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
-	golang.org/x/image v0.1.0 // indirect
 	golang.org/x/mod v0.12.0 // indirect
 	golang.org/x/sys v0.12.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
